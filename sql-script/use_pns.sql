@@ -1,5 +1,3 @@
-create database pns;
-
 use pns;
 
 CREATE TABLE `orders` (
