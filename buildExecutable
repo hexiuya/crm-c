@@ -1,4 +1,5 @@
 cd E:/Xiuya/UAT/crm-c
+mvn clean install -Dmaven.test.skip=true
 docker stop crm-c
 docker rm crm-c
 docker build E:/Xiuya/UAT/crm-c -t crm-c:0.0.1
