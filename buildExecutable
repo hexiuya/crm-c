@@ -1,5 +1,4 @@
-e:
-cd E:\Xiuya\UAT\crm-c
+cd E:/Xiuya/UAT/crm-c
 docker stop crm-c
 docker rm crm-c
 docker build . -t crm-c:0.0.1
