@@ -3,5 +3,7 @@ mvn clean install -Dmaven.test.skip=true
 docker stop crm-c
 docker rm crm-c
 docker build . -t crm-c:0.0.1
+docker start crm-test-mysql
+sleep 15
 docker run -d -p 8880:8880 --name crm-c --network crm-network --network-alias alias-crm-c --link crm-test-mysql crm-c:0.0.1
 
