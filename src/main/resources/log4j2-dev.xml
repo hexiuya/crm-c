@@ -21,7 +21,7 @@
                 <pattern>%d %p %C{1.} [%t] %m%n</pattern>  
             </PatternLayout>  
         </File>  
-        <File name="File_Info" fileName="D:/logtest/info.log"> 
+	<File name="File_Info" fileName="E:/Xiuya/UAT/crm-c/info.log"> 
          	  <Filters>
          	     <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL"/>
                  <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
@@ -30,7 +30,7 @@
                 <pattern>%d %p %C{1.} [%t] %m%n</pattern>  
             </PatternLayout>  
         </File>
-        <File name="File_Error" fileName="D:/logtest/error.log">  
+	<File name="File_Error" fileName="E:/Xiuya/UAT/crm-c/error.log">  
               <Filters>
                  <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
               </Filters> 
