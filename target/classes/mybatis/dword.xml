@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blackjade.crm.dao.DWOrdDao">
+	<select id="getCoinAddress" resultType="String">
+		SELECT a.CNETADD FROM crm.cacc a WHERE a.CID =#{clientid} AND a.PNSGID=#{pnsgid} AND a.PNSID=#{pnsid}
+	</select>
+	
+	<select id="selecDWOrd" resultType="com.blackjade.crm.model.DWOrd">
+		SELECT * FROM crm.dword a WHERE a.CID=#{clientid} AND a.OID=#{oid} AND a.PNSGID=#{pnsgid} AND a.PNSID=#{pnsid}
+	</select>
+		
+	<select id="selectDWOrdForUpdate" resultType="com.blackjade.crm.model.DWOrd">
+		SELECT * FROM crm.dword a WHERE a.CID=#{clientid} AND a.OID=#{oid} AND a.PNSGID=#{pnsgid} AND a.PNSID=#{pnsid} FOR UPDATE
+	</select>
+	
+	<update id="updateDWOrd">
+		UPDATE crm.dword a SET a.TRANID=#{tranid}, a.STATUS=#{status} WHERE a.CID=#{cid} AND a.OID=#{oid} AND a.PNSGID=#{pnsgid} 
+			AND a.PNSID=#{pnsid} AND a.SIDE=#{side} AND a.QUANT=#{quant} AND a.NETQUANT=#{netquant}
+	</update>
+	
+	<select id="getFeesRow" resultType="com.blackjade.crm.model.FeesRow">
+		SELECT * FROM crm.fees a WHERE a.PNSGID=#{pnsgid} AND a.PNSID=#{pnsid} AND a.SIDE=#{side}
+	</select>
+		
+	<insert id="insertDWOrd">
+		INSERT INTO crm.dword (TIMESTAMP,OID,CID,SIDE,PNSGID,PNSID,QUANT,FEES,NETQUANT,TRANID,TOADDRESS,STATUS) 
+		VALUES(#{timestamp},#{oid},#{cid},#{side},#{pnsgid},#{pnsid},#{quant},#{fees},#{netquant},#{tranid},#{toaddress},#{status})
+	</insert>
+
+</mapper>
+
+
+
